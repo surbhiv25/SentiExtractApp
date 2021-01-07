@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.SentimentActivity"
+    android:background="#B7FFEB3B">
+
+    <RelativeLayout
+        android:id="@+id/rl_first"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/txt_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="Hey,\nHow do you want to check the sentiment?"
+            android:textColor="#343B63"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/txt_header"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:id="@+id/btn_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By Text"
+                android:textAllCaps="false"
+                android:background="@drawable/button_back"
+                android:textColor="#fff"/>
+
+            <Button
+                android:id="@+id/btn_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By Image"
+                android:textAllCaps="false"
+                android:layout_marginStart="50dp"
+                android:background="@drawable/button_back"
+                android:textColor="#fff"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_byText"
+        android:visibility="gone"
+        android:layout_above="@+id/img_logo"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/ll_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter text to classify"
+                android:textColor="@android:color/background_dark"
+                android:padding="10dp"
+                android:background="@drawable/et_cuts"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txt_extracted"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:maxLines="4"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-black"/>
+
+            <app.java.sentiextract.ui.view.GraphicOverlay
+                android:id="@+id/graphic_overlay"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/button_capture"
+            android:layout_below="@+id/ll_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capture Image"
+            android:background="@drawable/button_back"
+            android:layout_centerHorizontal="true"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/txtView"
+            android:layout_below="@+id/button_capture"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Hurray!!\n\nYour calculated sentiment is"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-black"/>
+
+        <TextView
+            android:id="@+id/txt_showSentiment"
+            android:layout_below="@+id/txtView"
+            android:layout_above="@+id/btn_sentiment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="Positive"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginBottom="10dp"/>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:id="@+id/btn_sentiment"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/check_sentiment"
+            android:fontFamily="sans-serif"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:layout_marginBottom="25dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_back"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textColor="#fff"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/logo_normal"
+        android:contentDescription="@string/logo"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"/>
+
+</RelativeLayout>

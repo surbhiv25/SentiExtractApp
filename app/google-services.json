@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "43062651512",
+    "firebase_url": "https://sentiextract-app.firebaseio.com",
+    "project_id": "sentiextract-app",
+    "storage_bucket": "sentiextract-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:43062651512:android:d818e33e569a8c31095b8d",
+        "android_client_info": {
+          "package_name": "app.java.sentiextract"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "43062651512-0dco5nrcih90iai2fmc3da7smfsgajvj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.java.sentiextract",
+            "certificate_hash": "b20134b3a020dac41aa23d1207cd06148f03a73a"
+          }
+        },
+        {
+          "client_id": "43062651512-v2qfmog6mqpcoc46kfr8nbnnloi120bk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApQG4IrQUWleNXIK8FEXyTNaJNfKzO7jE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "43062651512-v2qfmog6mqpcoc46kfr8nbnnloi120bk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

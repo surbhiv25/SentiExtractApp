@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SentiExtractApp</string>
+    <string name="logo">logo</string>
+    <string name="check_sentiment">Check sentiment</string>
+</resources>
